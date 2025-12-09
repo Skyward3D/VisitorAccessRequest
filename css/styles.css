@@ -12,7 +12,7 @@ body {
 }
 
 .container {
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto;
     background: white;
     border-radius: 12px;
@@ -87,6 +87,80 @@ textarea {
     min-height: 100px;
 }
 
+/* Location Card Styles */
+.card-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.card {
+    flex: 1;
+    min-width: 120px;
+    padding: 15px 20px;
+    border: 2px solid #e1e1e1;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #fff;
+}
+
+.card:hover {
+    border-color: #667eea;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.card.active {
+    border-color: #667eea;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+}
+
+.card .name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.card .subtitle {
+    font-size: 12px;
+    color: #888;
+    margin-top: 4px;
+    margin-bottom: 0;
+}
+
+.card.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.card-group.small .card {
+    padding: 12px 15px;
+    min-width: 100px;
+}
+
+.card-group.small .card .name {
+    font-size: 14px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.selection-summary {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    font-size: 14px;
+    border-left: 4px solid #667eea;
+}
+
+.selection-summary strong {
+    color: #667eea;
+}
+
 button {
     width: 100%;
     padding: 15px;
@@ -146,7 +220,7 @@ button:disabled {
     border: 1px solid #ffeeba;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     .container {
         padding: 25px;
     }
@@ -157,5 +231,13 @@ button:disabled {
     
     .form-row {
         grid-template-columns: 1fr;
+    }
+    
+    .card-group {
+        flex-direction: column;
+    }
+    
+    .card {
+        min-width: 100%;
     }
 }

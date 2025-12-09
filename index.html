@@ -12,6 +12,52 @@
         <p class="subtitle">Please fill out this form to request visitor access</p>
         
         <form id="visitorForm">
+            <!-- Location Section -->
+            <div class="form-section">
+                <h2>Location</h2>
+                
+                <div class="form-group">
+                    <label>Select City *</label>
+                    <div class="card-group" id="city-cards">
+                        <div class="card" data-city="sydney">
+                            <div class="name">Sydney</div>
+                            <div class="subtitle">Australia</div>
+                        </div>
+                        <div class="card" data-city="canberra">
+                            <div class="name">Canberra</div>
+                            <div class="subtitle">Australia</div>
+                        </div>
+                        <div class="card" data-city="melbourne">
+                            <div class="name">Melbourne</div>
+                            <div class="subtitle">Australia</div>
+                        </div>
+                        <div class="card" data-city="auckland">
+                            <div class="name">Auckland</div>
+                            <div class="subtitle">New Zealand</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Select Campus *</label>
+                    <div class="card-group small" id="campus-cards">
+                        <div class="card disabled">
+                            <div class="name">Select a city first</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group hidden" id="location-group">
+                    <label>Select Location *</label>
+                    <div class="card-group small" id="location-cards"></div>
+                </div>
+
+                <!-- Hidden inputs to store selected values -->
+                <input type="hidden" id="selectedCity" name="selectedCity" required>
+                <input type="hidden" id="selectedCampus" name="selectedCampus" required>
+                <input type="hidden" id="selectedLocation" name="selectedLocation">
+            </div>
+
             <div class="form-section">
                 <h2>Visitor Information</h2>
                 
@@ -69,6 +115,11 @@
                         <input type="time" id="departureTime" name="departureTime">
                     </div>
                 </div>
+            </div>
+
+            <!-- Selection Summary -->
+            <div class="selection-summary" id="location-summary">
+                <strong>Location: </strong> <span id="selection-text">No location selected</span>
             </div>
             
             <button type="submit" id="submitBtn">Submit Request</button>
